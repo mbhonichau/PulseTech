@@ -589,7 +589,7 @@ h6 {
   background-color: var(--accent-color);
   width: 40px;
   height: 40px;
-  border-radius: 4px;
+  border-radius: 100%;
   transition: all 0.4s;
 }
 
@@ -602,6 +602,7 @@ h6 {
 .scroll-top:hover {
   background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
   color: var(--contrast-color);
+  rotate: 1turn;
 }
 
 .scroll-top.active {

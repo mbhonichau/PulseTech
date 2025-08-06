@@ -18,64 +18,110 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="PulseTech Logo">
-      </a>
-    </div>
-  </header>
-
-  <main class="main mt-5 pt-5">
-
-    <section class="section login-section py-5">
-      <div class="container" data-aos="fade-up">
-        <div class="row justify-content-center">
-          <div class="col-lg-5 col-md-8">
-
-            <div class="card shadow-lg border-0 rounded-4">
-              <div class="card-body p-4">
-                <h3 class="text-center mb-4">Login to PulseTech</h3>
-                <form action="dashboard.html" method="post">
-
-                  <div class="mb-3">
-                    <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                  </div>
-
-                  <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
-                  </div>
-
-                  <div class="d-flex justify-content-between mb-3">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="rememberMe">
-                      <label class="form-check-label" for="rememberMe">
-                        Remember Me
-                      </label>
-                    </div>
-                    <a href="#" class="text-decoration-none">Forgot Password?</a>
-                  </div>
-
-                  <button type="submit" class="btn btn-primary w-100">Login</button>
-
-                  <p class="mt-3 text-center">
-                    Don't have an account? <a href="signup.html" class="text-decoration-none">Sign Up</a>
-                  </p>
-                </form>
-              </div>
-            </div>
-
-          </div>
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="assets/img/logo.png" alt="PulseTech Logo">
+            </a>
         </div>
-      </div>
-    </section>
+    </header>
 
-  </main>
+    <main class="main mt-5 pt-5">
 
-  <!-- Bootstrap JS -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <section class="section login-section py-5">
+            <div class="container" data-aos="fade-up">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 col-md-8">
+
+                        <div class="card shadow-lg border-0 rounded-4">
+                            <div class="card-body p-4">
+                                <h3 class="text-center mb-4">Login to PulseTech</h3>
+                                <form action="dashboard.html" method="post">
+
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="password" name="password" required>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="rememberMe">
+                                            <label class="form-check-label" for="rememberMe">
+                                                Remember Me
+                                            </label>
+                                        </div>
+                                        <a href="#" class="text-decoration-none">Forgot Password?</a>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                                    <p class="mt-3 text-center">
+                                        Don't have an account? <a href="signup.html" class="text-decoration-none">Sign Up</a>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Dummy users for testing (no database)
+        const users = [
+            {
+                email: "student@example.com",
+                password: "student123",
+                role: "student"
+            },
+            {
+                email: "employer@example.com",
+                password: "employer123",
+                role: "employer"
+            },
+            {
+                email: "institution@example.com",
+                password: "institution123",
+                role: "institution"
+            }
+        ];
+
+        // Handle login form submission
+        document.querySelector("form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        // Find user in dummy data
+        const user = users.find(u => u.email === email && u.password === password);
+
+        if (user) {
+            alert(`Login successful! Redirecting to ${user.role} dashboard...`);
+
+            // Redirect based on role
+            if (user.role === "student") {
+            window.location.href = "student-dashboard.html";
+            } else if (user.role === "employer") {
+            window.location.href = "employer-dashboard.html";
+            } else if (user.role === "institution") {
+            window.location.href = "institution-dashboard.html";
+            }
+        } else {
+            alert("Invalid email or password. Please try again.");
+        }
+        });
+    </script>
+
 </body>
 
 </html>
