@@ -1,0 +1,99 @@
+/* ==============================
+   Login & Sign Up Form Styling
+   ============================== */
+
+.auth-section {
+  background-color: var(--background-color);
+  padding: 80px 0;
+}
+
+.auth-card {
+  background-color: var(--surface-color);
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.auth-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.auth-card h3 {
+  font-family: var(--heading-font);
+  color: var(--heading-color);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.auth-card label {
+  font-weight: 500;
+  color: var(--default-color);
+}
+
+.auth-card .form-control {
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  padding: 10px 14px;
+  font-size: 15px;
+  transition: all 0.2s ease-in-out;
+}
+
+.auth-card .form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+.auth-card .btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.auth-card .btn-primary:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 10%);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 10%);
+}
+
+.auth-card p {
+  margin-top: 1rem;
+  font-size: 14px;
+  text-align: center;
+}
+
+.auth-card a {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.auth-card a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+/* Remember me + Forgot password row */
+.auth-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.auth-options .form-check-label {
+  font-size: 14px;
+}
+
+/* Role dropdown on Sign Up */
+.auth-card select.form-select {
+  border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .auth-card {
+    padding: 1.5rem;
+  }
+}
